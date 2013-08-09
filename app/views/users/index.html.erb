@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+<table class="table content-table">
+  <thead>
+    <tr>
+      <th>Team vote</th>
+      <th>Player vote</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.team.name %></td>
+        <td><%= user.player.name %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user, :class => 'btn btn-default btn-small' %></td>
+        <% if session[:user_id] == user.id %>
+        <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-info btn-small' %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path, :class => 'btn btn-warning btn-large' %>

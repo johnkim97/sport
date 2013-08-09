@@ -1,0 +1,29 @@
+<h1>Players</h1>
+
+<table class="table content-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th>Bio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.team.name %></td>
+        <td><%= player.bio %></td>
+        <td><%= link_to 'Show', player, :class => 'btn btn-default btn-small' %></td>
+       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player', new_player_path, :class => 'btn btn-warning btn-large' %>

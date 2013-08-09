@@ -1,0 +1,33 @@
+<% if notice.try(:downcase).try(:include?, 'invalid')  %>
+  <div class="alert alert-danger"><%= notice %></div>
+<% elsif notice %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<h1>Teams</h1>
+
+<table class="table content-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.bio %></td>
+        <td><%= link_to 'Show', team, :class => 'btn btn-default btn-small' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path, :class => 'btn btn-warning btn-large' %>

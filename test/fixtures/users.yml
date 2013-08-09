@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teamvote_id: 1
+  playervote_id: 1
+  password_digest: 1
+  name: MyString
+
+two:
+  teamvote_id: 1
+  playervote_id: 1
+  password_digest: 1
+  name: MyString
